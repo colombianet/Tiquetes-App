@@ -1,0 +1,13 @@
+<form class="form-signin mt-5" [formGroup]="form" (ngSubmit)="submit()" autocomplete="off">
+    <div class="text-center">
+        <img class="mb-3" src="assets/img/logo.jpg" alt="logo" width="102" height="102">
+    </div>
+    <h1 class="h3 mb-3 font-weight-normal text-center">Iniciar sesión</h1>
+    <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" autofocus>
+    <span class="text-danger" *ngIf="validField('email')">Debe ser un correo válido</span>
+    <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Contraseña">
+    <span class="text-danger" *ngIf="validField('password')">Debe contener mínimo 3 caracteres</span>
+    
+    <button class="btn btn-lg btn-primary btn-block mt-5" type="submit" [disabled]="form.invalid">Entrar</button>
+    <p class="mt-5 mb-3 text-muted text-center">&copy; {{ anio }}</p>
+</form>

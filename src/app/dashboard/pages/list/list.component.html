@@ -1,0 +1,26 @@
+<h2>Resumen de vuelos</h2>
+<hr>
+
+<span class="mt-5 text-warning" *ngIf="!travelsUser || travelsUser.length <= 0">
+  <em class="far fa-frown fa-lg"></em> Usuario no tiene vuelos registrados
+</span>
+
+<table class="table mt-5" *ngIf="travelsUser">
+  <caption>Mis vuelos</caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Destino</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let travel of travelsUser; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ travel.name }}</td>
+        <td><span class="ml-4">{{ travel.cuantity }}</span></td>
+        <td>{{ travel.total | currency }}</td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <a class="navbar-brand" routerLink="/dashboard/travels">
+      <img src="assets/img/logoNav.png" width="30" height="30" alt="Logo">
+      Capsule corp.</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/dashboard/travels">
+            <em class="fas fa-plane"></em> Reservar
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/dashboard/list">
+            <em class="fas fa-globe-americas"></em> Mis vuelos
+          </a>
+        </li>
+      </ul>
+      <div>
+        <span class="shadow-sm">
+          <em class="fas fa-user"></em> Usuario: <strong>{{ userActive }}</strong>
+        </span>&nbsp;&nbsp;
+        <button class="btn btn-outline-danger btn-sm" (click)="logout()">
+          <em class="fas fa-sign-out-alt mr-1"></em>Cerrar sesión
+        </button>
+      </div>
+    </div>
+  </nav>

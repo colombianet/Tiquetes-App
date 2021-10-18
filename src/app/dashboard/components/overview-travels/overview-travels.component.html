@@ -1,0 +1,31 @@
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Reserva tus vuelos a <small>{{ travel.name }}</small>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Agregar cantidad</span>
+                </div>
+                <form [formGroup]="form">
+                    <input autofocus type="number" class="form-control" formControlName="entrada" (input)="calculateCuantity( $event )">
+                </form>
+              </div><br>
+            <strong>Valor: {{ cuantityTravelUser }}</strong>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button #save type="button" class="btn btn-primary" (click)="saveTravels( travel.name, getEntrada(), travel.price )">
+            Guardar cambios
+          </button>
+        </div>
+      </div>
+    </div>
+</div>
